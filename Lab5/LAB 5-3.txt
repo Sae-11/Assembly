@@ -1,0 +1,20 @@
+LAB 5
+
+PORT A: 0C0h
+PORT B: 0C2h
+PORT A: 0C4h
+PORT A: 0C6h
+
+COMMND BYTE: 10001001
+
+DATA SEGMENT
+ 	PORTA EQU 0C0h ; PORTA address
+ 	PORTB EQU 0C2h ; PORTB address
+ 	PORTC EQU 0C4h ; PORTC address
+ 	COM_REG EQU 0C6h ; Command Register Address
+DATA ENDS
+
+START: 
+	MOV DX, 0C6h ; set the address
+ 	MOV AL, 10001001B
+	OUT DX, AL ; send the command byte
